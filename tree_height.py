@@ -39,32 +39,19 @@ def compute_tree_height(nodes, parents, nodeCount):
 
 def main():
     # implement input form keyboard and from files
-    fistInput = input("")
-    try:
-        if "I" in firstInput:
-            nodeCount = int(fistInput)
-            parrentListString = input("")
-        elif "F" in firstInput:
-            fistInput = input("")
-            if fistInput.find('s'):
-                exit()
-            if exists(fistInput):
-                fileItem = open("test/" + fistInput, "r")
-                lines = fileItem.readlines()
-                count = 0
-                for line in lines:
-                    if count == 0:
-                        nodeCount = int(line.strip())
-                    if count == 1:
-                        parrentListString = line.strip()
-                    if count > 1:
-                        break
-                    count = count + 1
-    except:
-        if fistInput.find('s'):
+    firstInput = input("")
+
+    if "I" in firstInput:
+        secondInput = input("")
+        nodeCount = int(secondInput)
+        parrentListString = input("")
+    elif "F" in firstInput:
+        secondInput = input("")
+        if "a" in secondInput:
             exit()
-        if exists(fistInput):
-            fileItem = open(fistInput, "r")
+        if exists("test/" + secondInput):
+            print("test/" + secondInput)
+            fileItem = open("test/" + secondInput, "r")
             lines = fileItem.readlines()
             count = 0
             for line in lines:
@@ -76,8 +63,7 @@ def main():
                     break
                 count = count + 1
         else:
-            exit("Nepareiza atbilde")
-
+            print("not found")
     # list_of_strings = parrentListString.split(' ')# 👉️ 
     # list_of_integers = [int(x) for x in list_of_strings]
     
