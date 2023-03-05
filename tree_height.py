@@ -41,8 +41,25 @@ def main():
     # implement input form keyboard and from files
     fistInput = input("")
     try:
-        nodeCount = int(fistInput)
-        parrentListString = input("")
+        if firstInput == "I":
+            nodeCount = int(fistInput)
+            parrentListString = input("")
+        elif firstInput == "F":
+            fistInput = input("")
+            if fistInput.find('s'):
+                exit()
+            if exists(fistInput):
+                fileItem = open(fistInput, "r")
+                lines = fileItem.readlines()
+                count = 0
+                for line in lines:
+                    if count == 0:
+                        nodeCount = int(line.strip())
+                    if count == 1:
+                        parrentListString = line.strip()
+                    if count > 1:
+                        break
+                    count = count + 1
     except:
         if fistInput.find('s'):
             exit()
