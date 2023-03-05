@@ -41,10 +41,10 @@ def main():
     # implement input form keyboard and from files
     fistInput = input("")
     try:
-        if firstInput == "I":
+        if "I" in firstInput:
             nodeCount = int(fistInput)
             parrentListString = input("")
-        elif firstInput == "F":
+        elif "F" in firstInput:
             fistInput = input("")
             if fistInput.find('s'):
                 exit()
