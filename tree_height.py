@@ -49,7 +49,7 @@ def main():
             if fistInput.find('s'):
                 exit()
             if exists(fistInput):
-                fileItem = open(fistInput, "r")
+                fileItem = open("test/" + fistInput, "r")
                 lines = fileItem.readlines()
                 count = 0
                 for line in lines:
